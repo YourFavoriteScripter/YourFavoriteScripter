@@ -1,0 +1,11 @@
+im just a solo developer that is tryin to make some stupid stuff and im not even above 13 so please dont harass me with: "update when update when update when update whe-"
+
+i work on powerprompt everyday, and i try to make new ideas.
+
+the reason i wanted to make powerprompt was because i wanted to make it easier for people that dont know computers, to be able to use stuff and do commands.
+
+i was in that position once, and oh does it feel horrible.
+
+and please note: powerprompt is not associated with powerpoint at all. its a combination of powershell and command prompt.
+
+another note: powerprompt is still in pre-alpha so dont expect much. i will try my best to post updates, trust me bro.

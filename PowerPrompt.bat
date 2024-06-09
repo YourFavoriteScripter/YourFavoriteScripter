@@ -1,12 +1,12 @@
 :setup
 @echo off
-title PowerPrompt v0.02
-echo PowerPrompt Pre-Alpha 2 All rights reserved.
+title PowerPrompt v0.03
+echo PowerPrompt Pre-Alpha 3 All rights reserved.
 echo Have any suggestions? Send them to PowerPrompt2000@gmail.com!
 echo Say cmds for a list of commands.
 
 :command
-set /p cmd="C:\Users\User\"
+set /p cmd="C:\Users\User\PowerPrompt\"
 if %cmd% EQU cmds goto commandlist
 if %cmd% EQU program-cmds goto programcmds
 if %cmd% EQU version goto ver
@@ -15,6 +15,9 @@ if %cmd% EQU log goto logprocedure
 if %cmd% EQU textcolor goto textcolorprocedure
 if %cmd% EQU clear goto clear
 if %cmd% EQU website goto website
+if %cmd% EQU shutdown goto shutdown
+if %cmd% EQU restart goto restart
+if %cmd% EQU scan goto scan
 echo Command not found
 
 goto command
@@ -31,11 +34,20 @@ echo Command 7 - version - Shows you which version of PowerPrompt you are curren
 echo Command 8 - close - Closes the program you specified with the program-commands command.
 echo -PowerPrompt Pre-Alpha 2 Commands-------------------------------------------------------
 echo Command 9 - clear - Removes history.
-echo Command 10 - website - Launches your browser and opens the website. (procedure)
+echo Command 10 - website - Launches your browser and opens a website. (procedure)
 echo -PowerPrompt Pre-Alpha 3 Commands-------------------------------------------------------
-echo Command 11 - ~~~~~~~~ - ~~~~~~~~
-echo Command 12 - ~~~~~~~~ - ~~~~~~~~
-echo Command 13 - ~~~~~~~~ - ~~~~~~~~
+echo Command 11 - shutdown - Shutdown your computer.
+echo Command 12 - restart - Restart your computer.
+echo Command 13 - scan - Scans your computer for bad files / broken files, and removes them.
+echo -PowerPrompt Alpha Commands-------------------------------------------------------------
+echo Command 14 - ~~~~~~~~~~ - ~~~~~~~~~~
+echo Command 15 - ~~~~~~~~~~ - ~~~~~~~~~~
+echo Command 16 - ~~~~~~~~~~ - ~~~~~~~~~~
+echo Command 17 - ~~~~~~~~~~ - ~~~~~~~~~~
+echo Command 18 - ~~~~~~~~~~ - ~~~~~~~~~~
+echo Command 19 - ~~~~~~~~~~ - ~~~~~~~~~~
+echo Command 20 - ~~~~~~~~~~ - ~~~~~~~~~~
+echo Command 21 - ~~~~~~~~~~ - ~~~~~~~~~~
 echo ----------------------------------------------------------------------------------------
 goto command
 
@@ -68,16 +80,16 @@ taskkill /F /IM %program%
 goto command
 
 :ver
-echo Your PowerPrompt is in Pre-Alpha 2, specifically v0.02.
+echo Your PowerPrompt is in Pre-Alpha 3, specifically v0.03.
 
 goto command
 
 :foldermake
-echo CreateFolder procedure v0.02
+echo CreateFolder procedure v0.03
 set /p folderName="Choose the folder's name: "
 echo Creating folder . . .
 md %folderName%
-echo SUCCESS: The folder called "%folderName%" has been created in the directory "C:\Users\User\Desktop"!
+echo SUCCESS: The folder called "%folderName%" has been created in the directory which PowerPrompt is in!
 
 goto command
 
@@ -177,4 +189,35 @@ set /p domain="Enter the name of the website you would like to go to, (example.c
 echo Opening website!
 start "msedge.exe" "https://www.%domain%"
 
+goto command
+
+:shutdown
+echo Are you sure you would like to shutdown your computer? (yes / no)
+set /p shutdownoption=""
+if %shutdownoption% EQU yes goto shutdown2
+if %shutdownoption% EQU no goto command
+goto shutdown
+
+:shutdown2
+shutdown /s
+
+:restart
+echo Are you sure you would like to restart your computer? (yes / no)
+set /p restartoption=""
+if %restartoption% EQU yes goto restart2
+if %restartoption% EQU no goto command
+goto restart
+
+:restart2
+shutdown /r
+
+:scan
+echo Are you sure you would like to scan your computer? (yes / no)
+set /p scanoption=""
+if %scanoption% EQU yes goto scan2
+if %scanoption% EQU no goto command
+goto scan
+
+:scan2
+sfc /scannow
 goto command

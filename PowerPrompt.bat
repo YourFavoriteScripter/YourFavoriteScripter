@@ -80,16 +80,16 @@ taskkill /F /IM %program%
 goto command
 
 :ver
-echo Your PowerPrompt is in Pre-Alpha 3, specifically v0.03.
+echo Your PowerPrompt is in Pre-Alpha 2, specifically v0.02.
 
 goto command
 
 :foldermake
-echo CreateFolder procedure v0.03
+echo CreateFolder procedure v0.02
 set /p folderName="Choose the folder's name: "
 echo Creating folder . . .
 md %folderName%
-echo SUCCESS: The folder called "%folderName%" has been created in the directory which PowerPrompt is in!
+echo SUCCESS: The folder called "%folderName%" has been created in the directory "C:\Users\User\Desktop"!
 
 goto command
 
